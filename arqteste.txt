@@ -1,1 +1,10 @@
 Este é meu arquivo de teste, agora atualizado.
+comandos usados no mysql
+sudo mysql -u root -p
+status
+show databases;
+show tables;
+create database nome_do_banco;
+use nome_do_banco;
+create table nome_da_tabela();
+describe nome_da_tabela;
