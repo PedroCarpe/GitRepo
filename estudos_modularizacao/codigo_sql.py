@@ -4,16 +4,16 @@ from codigo_python import cadastrar,id1,nome,cpf,email,telefone
 
 #Conexao com o banco de dados
 mybd = mysql.connector.connect(
-host='localhost',
-user='root',
-password='senha',
-database='usuarios'
+host = 'localhost',
+user = 'root',
+password = 'senha',
+database = 'usuarios'
 )
 
 print('___Cadastro__de__Cliente___')
 while True:
     cadastrar()
-    resposta=input('\nQuer cadastrar outro cliente (sim/nao)? ')
+    resposta = input('\nQuer cadastrar outro cliente (sim/nao)? ')
     if resposta == 'nao':
         break
 
