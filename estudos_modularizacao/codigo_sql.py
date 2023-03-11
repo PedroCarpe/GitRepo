@@ -17,14 +17,14 @@ while True:
     if resposta == 'nao':
         break
 
-print(id1,nome,cpf,email,telefone)
+#print(id1,nome,cpf,email,telefone)
     
 
 mycursor = mybd.cursor()
-sql = ('INSERT INTO pessoas (id,nome,cpf,email,telefone) VALUES(%s,%s,%s,%s,%s)')
+sql = ('INSERT INTO pessoas (nome,cpf,email,telefone) VALUES(%s,%s,%s,%s)')
 
 #variavel 'nome' escolhida aleatoriamente, como referencia
 for usuario in range(len(nome)):
-    val = (id1[usuario],nome[usuario],cpf[usuario],email[usuario],telefone[usuario])
+    val = (nome[usuario],cpf[usuario],email[usuario],telefone[usuario])
     mycursor.execute(sql,val)
     mybd.commit()

@@ -1,45 +1,45 @@
 #A ideia do algoritmo, é simular o cadastro de um cliente/usuario
-num = 4
+num = 0
 id1 = []
 nome = []
 cpf = []
 email = []
 telefone = []
 
-def criarId():
+def criar_id():
     global id1
     global num
     id1.append(num)
     num += 1
     
-def criarNome():
+def criar_nome():
     global nome
     nome.append(input('Digite seu nome: '))
     
-def criarCpf():
+def criar_cpf():
     global cpf
     cpf.append(input('Digite seu CPF: '))  
     
-def criarEmail():
+def criar_email():
     global email
     email.append(input('Digite seu email: '))
     
-def criarTelefone():
+def criar_telefone():
     global telefone
     telefone.append(input('Digite seu telefone: '))
  
 def cadastrar():
-    criarId()
-    criarNome()
-    criarCpf()
-    criarEmail()
-    criarTelefone()
+    #criar_id()
+    criar_nome()
+    criar_cpf()
+    criar_email()
+    criar_telefone()
     
-def Atualizar():
+def atualizar():
     posicao = nome.index(input('Digite o nome que procura: '))
     nome[posicao] = input('Digite o novo nome: ')    
     
-def Deletar():
+def deletar():
     pos = nome.index(input('Digite o nome que deseja apagar: '))
     id1.pop(pos)
     cpf.pop(pos)
