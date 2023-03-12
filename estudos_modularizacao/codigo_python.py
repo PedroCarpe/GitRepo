@@ -1,4 +1,6 @@
 #A ideia do algoritmo, é simular o cadastro de um cliente/usuario
+#APF, validar entradas dos campos
+#APF, mostrar dados vindo do banco
 num = 0
 id1 = []
 nome = []
