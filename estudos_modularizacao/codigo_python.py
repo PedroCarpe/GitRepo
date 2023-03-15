@@ -19,16 +19,22 @@ def criar_nome():
     
     nome_ = input('Digite seu nome: ')
     copia_nome = nome_
-    nome_.split()
+    nome_ = nome_.split()
     
     for partes_nome in nome_:
         if partes_nome.isalpha() == True:
             boleana = True
         else:
             boleana = False
-    
+            break
+    #cadastrar()
+
+    print(boleana)
     if boleana == True:
         nome.append(copia_nome)
+        return True
+    else:
+        print('nome incorreto!')    
       
     
 def criar_cpf():
@@ -45,10 +51,11 @@ def criar_telefone():
  
 def cadastrar():
     #criar_id()
-    criar_nome()
-    criar_cpf()
-    criar_email()
-    criar_telefone()
+    if criar_nome() == True:
+        criar_cpf()
+        criar_email()
+        criar_telefone()
+        
     
 def atualizar():
     posicao = nome.index(input('Digite o nome que procura: '))
