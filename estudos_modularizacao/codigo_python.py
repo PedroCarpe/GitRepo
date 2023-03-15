@@ -1,6 +1,6 @@
 #A ideia do algoritmo, é simular o cadastro de um cliente/usuario
 #APF, validar entradas dos campos
-#APF, mostrar dados vindo do banco
+
 num = 0
 id1 = []
 nome = []
@@ -16,7 +16,20 @@ def criar_id():
     
 def criar_nome():
     global nome
-    nome.append(input('Digite seu nome: '))
+    
+    nome_ = input('Digite seu nome: ')
+    copia_nome = nome_
+    nome_.split()
+    
+    for partes_nome in nome_:
+        if partes_nome.isalpha() == True:
+            boleana = True
+        else:
+            boleana = False
+    
+    if boleana == True:
+        nome.append(copia_nome)
+      
     
 def criar_cpf():
     global cpf
