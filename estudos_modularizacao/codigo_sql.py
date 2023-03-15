@@ -9,6 +9,7 @@ user = 'root',
 password = 'senha',
 database = 'usuarios'
 )
+mycursor = mybd.cursor()
 
 print('___Cadastro__de__Cliente___')
 while True:
@@ -17,10 +18,9 @@ while True:
     if resposta == 'nao':
         break
 
-#print(id1,nome,cpf,email,telefone)
     
 
-mycursor = mybd.cursor()
+#--------------------------------------------------------------------------------
 sql = ('INSERT INTO pessoas (nome,cpf,email,telefone) VALUES(%s,%s,%s,%s)')
 
 #variavel 'nome' escolhida aleatoriamente, como referencia
@@ -28,3 +28,12 @@ for usuario in range(len(nome)):
     val = (nome[usuario],cpf[usuario],email[usuario],telefone[usuario])
     mycursor.execute(sql,val)
     mybd.commit()
+
+#---------------------------------------------------------------------------------
+mycursor.execute('SELECT * FROM pessoas')
+myresult = mycursor.fetchall()
+
+print('')
+for result in myresult:
+    print(result)
+
