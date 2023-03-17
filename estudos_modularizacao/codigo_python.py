@@ -29,7 +29,7 @@ def criar_nome():
             break
     #cadastrar()
 
-    print(boleana)
+    #print(boleana)
     if boleana == True:
         nome.append(copia_nome)
         return True
@@ -57,10 +57,17 @@ def cadastrar():
         criar_telefone()
         
     
-def atualizar():
+'''def atualizar():
     posicao = nome.index(input('Digite o nome que procura: '))
-    nome[posicao] = input('Digite o novo nome: ')    
+    nome[posicao] = input('Digite o novo nome: ')
+'''    
     
+def atualizar():
+    antigo_email = input('Digite o antigo email: ')
+    novo_email = input('Digite o novo email: ')
+    
+    return novo_email,antigo_email
+
 def deletar():
     pos = nome.index(input('Digite o nome que deseja apagar: '))
     id1.pop(pos)
