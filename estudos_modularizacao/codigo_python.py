@@ -1,18 +1,11 @@
 #A ideia do algoritmo, é simular o cadastro de um cliente/usuario
 #APF, validar entradas dos campos
 
-num = 0
-id1 = []
 nome = []
 cpf = []
 email = []
 telefone = []
 
-def criar_id():
-    global id1
-    global num
-    id1.append(num)
-    num += 1
     
 def criar_nome():
     global nome
@@ -50,7 +43,6 @@ def criar_telefone():
     telefone.append(input('Digite seu telefone: '))
  
 def cadastrar():
-    #criar_id()
     if criar_nome() == True:
         criar_cpf()
         criar_email()
@@ -70,7 +62,7 @@ def atualizar():
 
 def deletar():
     pos = nome.index(input('Digite o nome que deseja apagar: '))
-    id1.pop(pos)
+    #id1.pop(pos)
     cpf.pop(pos)
     email.pop(pos)
     telefone.pop(pos)
@@ -96,6 +88,6 @@ if resposta=='sim':
     except:
         print('Cliente não encontrado!')'''
     
-for t in range(len(id1)):
-    print('\n___Dados__Cadastrados___\n'+'Nome: '+nome[t]+'\n'+'CPF: '+cpf[t][0:3]+'.'+cpf[t][3:6]+'.'+cpf[t][6:9]+'-'+cpf[t][9:]+'\n'+'Email: '+email[t]+'\n'+'Telefone: ('+telefone[t][0:2]+') '+telefone[t][2:])    
+#for t in range(len(id1)):
+#    print('\n___Dados__Cadastrados___\n'+'Nome: '+nome[t]+'\n'+'CPF: '+cpf[t][0:3]+'.'+cpf[t][3:6]+'.'+cpf[t][6:9]+'-'+cpf[t][9:]+'\n'+'Email: '+email[t]+'\n'+'Telefone: ('+telefone[t][0:2]+') '+telefone[t][2:])    
   
