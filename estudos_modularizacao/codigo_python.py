@@ -71,16 +71,7 @@ def deletar():
 
 #vetor = [id1[0],nome[0],cpf[0],email[0],telefone[0]]
 
-
-'''resposta=input('\nQuer atualizar seus dados (sim/nao)? ')
-if resposta=='sim':
-    try:
-        print('___Atualização__de__Cadastro___')
-        Atualizar()
-    except:
-        print('Cliente não encontrado!')    
-
-resposta=input('\nDeseja apagar um cadastro (sim/nao)? ')
+'''resposta=input('\nDeseja apagar um cadastro (sim/nao)? ')
 if resposta=='sim':
     try:
         print('___Apagar__Cadastro___')

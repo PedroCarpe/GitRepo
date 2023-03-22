@@ -51,3 +51,5 @@ print('')
 for result in myresult:
     print(result)
 
+mycursor.close()
+mybd.close()
