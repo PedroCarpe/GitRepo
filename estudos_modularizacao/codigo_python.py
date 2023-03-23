@@ -20,19 +20,36 @@ def criar_nome():
         else:
             boleana = False
             break
-    #cadastrar()
 
     #print(boleana)
     if boleana == True:
         nome.append(copia_nome)
         return True
     else:
-        print('nome incorreto!')    
+        print('Nome incorreto, digite novamente!')
+        criar_nome()    
       
     
+'''def criar_cpf():
+    global cpf
+    cpf.append(input('Digite seu CPF: '))'''
+
 def criar_cpf():
     global cpf
-    cpf.append(input('Digite seu CPF: '))  
+
+    cpf_ = input('Digite seu CPF: ')
+
+    if cpf_.isnumeric() == True:
+        boleana = True
+    else:
+        boleana = False
+
+    #print(boleana)
+    if boleana == True:
+        cpf.append(cpf_)
+        return True
+    else:
+        print('CPF incorreto, digite novamente!')      
     
 def criar_email():
     global email
@@ -42,11 +59,21 @@ def criar_telefone():
     global telefone
     telefone.append(input('Digite seu telefone: '))
  
+'''def cadastrar():
+    if criar_nome() == True:    
+        if criar_cpf() == True:
+            criar_email()
+            criar_telefone()
+        else:
+            criar_cpf()   
+    else:
+        criar_nome()'''
+
 def cadastrar():
-    if criar_nome() == True:
-        criar_cpf()
-        criar_email()
-        criar_telefone()
+    criar_nome()
+    criar_cpf()
+    criar_email()
+    criar_telefone()                
         
     
 '''def atualizar():
