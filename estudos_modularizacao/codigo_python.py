@@ -23,10 +23,11 @@ def criar_nome():
 
     #print(boleana)
     if boleana == True:
+        #print('\u2705')
         nome.append(copia_nome)
         return True
     else:
-        print('Nome incorreto, digite novamente!')
+        print('\u001b[31m'+'Nome incorreto, digite novamente!'+'\u001b[37m')
         criar_nome()    
       
     
@@ -37,7 +38,7 @@ def criar_nome():
 def criar_cpf():
     global cpf
 
-    cpf_ = input('Digite seu CPF: ')
+    cpf_ = input('Digite seu CPF(somente números/sem espaços): ')
 
     if cpf_.isnumeric() == True:
         boleana = True
@@ -49,15 +50,52 @@ def criar_cpf():
         cpf.append(cpf_)
         return True
     else:
-        print('CPF incorreto, digite novamente!')      
+        print('\u001b[31m'+'CPF incorreto, digite novamente!'+'\u001b[37m')
+        criar_cpf()      
     
+'''def criar_email():
+    global email
+    email.append(input('Digite seu email: '))'''
+
 def criar_email():
     global email
-    email.append(input('Digite seu email: '))
+
+    email_ = input('Digite seu email: ')
+
+    if email_.find('@') != -1:
+        boleana = True
+    else:
+        boleana = False
+
+    #print(boleana)
+    if boleana == True:
+        email.append(email_)
+        return True
+    else:
+        print('\u001b[31m'+'Email incorreto, digite novamente!'+'\u001b[37m')
+        criar_email()    
     
+'''def criar_telefone():
+    global telefone
+    telefone.append(input('Digite seu telefone: '))'''
+
 def criar_telefone():
     global telefone
-    telefone.append(input('Digite seu telefone: '))
+
+    telefone_ = input('Digite seu Telefone(somente números/sem espaços): ')
+
+    if telefone_.isnumeric() == True:
+        boleana = True
+    else:
+        boleana = False
+
+    #print(boleana)
+    if boleana == True:
+        telefone.append(telefone_)
+        return True
+    else:
+        print('\u001b[31m'+'Telefone incorreto, digite novamente!'+'\u001b[37m')
+        criar_telefone()    
  
 '''def cadastrar():
     if criar_nome() == True:    

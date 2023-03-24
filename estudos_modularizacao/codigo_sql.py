@@ -19,7 +19,7 @@ while True:
     if resposta == 'nao':
         break
 
-resposta_atualizar = input('\nQuer atualizar seus dados (sim/nao)? ')
+'''resposta_atualizar = input('\nQuer atualizar seus dados (sim/nao)? ')
 if resposta_atualizar == 'sim':
     try:
         print('___Atualização__de__Cadastro___')
@@ -29,9 +29,7 @@ if resposta_atualizar == 'sim':
         mybd.commit()
         print(mycursor.rowcount," registro(s) afetado(s)!")
     except:
-        print('Cliente não encontrado!')   
-
-
+        print('Cliente não encontrado!')'''   
 
 #--------------------------------------------------------------------------------
 sql = ('INSERT INTO pessoas (nome,cpf,email,telefone) VALUES(%s,%s,%s,%s)')
@@ -42,12 +40,12 @@ for usuario in range(len(nome)):
     mycursor.execute(sql,val)
     mybd.commit()
 
-
 #---------------------------------------------------------------------------------
 mycursor.execute('SELECT * FROM pessoas')
 myresult = mycursor.fetchall()
 
 print('')
+print('___Dados__Cadastrados___\n')
 for result in myresult:
     print(result)
 
