@@ -30,10 +30,7 @@ def criar_nome():
         print('\u001b[31m'+'Nome incorreto, digite novamente!'+'\u001b[37m')
         criar_nome()    
       
-    
-'''def criar_cpf():
-    global cpf
-    cpf.append(input('Digite seu CPF: '))'''
+
 
 def criar_cpf():
     global cpf
@@ -52,10 +49,7 @@ def criar_cpf():
     else:
         print('\u001b[31m'+'CPF incorreto, digite novamente!'+'\u001b[37m')
         criar_cpf()      
-    
-'''def criar_email():
-    global email
-    email.append(input('Digite seu email: '))'''
+
 
 def criar_email():
     global email
@@ -75,9 +69,6 @@ def criar_email():
         print('\u001b[31m'+'Email incorreto, digite novamente!'+'\u001b[37m')
         criar_email()    
     
-'''def criar_telefone():
-    global telefone
-    telefone.append(input('Digite seu telefone: '))'''
 
 def criar_telefone():
     global telefone
@@ -97,15 +88,6 @@ def criar_telefone():
         print('\u001b[31m'+'Telefone incorreto, digite novamente!'+'\u001b[37m')
         criar_telefone()    
  
-'''def cadastrar():
-    if criar_nome() == True:    
-        if criar_cpf() == True:
-            criar_email()
-            criar_telefone()
-        else:
-            criar_cpf()   
-    else:
-        criar_nome()'''
 
 def cadastrar():
     criar_nome()
@@ -119,11 +101,26 @@ def cadastrar():
     nome[posicao] = input('Digite o novo nome: ')
 '''    
     
-def atualizar():
+'''def atualizar():
     antigo_email = input('Digite o antigo email: ')
     novo_email = input('Digite o novo email: ')
     
-    return novo_email,antigo_email
+    return novo_email,antigo_email'''
+
+def atualizar():
+    print('Opções de atualização:\n1 - Nome;\n2 - CPF;\n3 - Email;\n4 - Telefone;\n')
+    opcao = input('Digite a opção desejada: ')
+    
+    if opcao == '3':
+        antigo_email = input('Digite o antigo email: ')
+        novo_email = input('Digite o novo email: ')
+        dados_ = novo_email,antigo_email,'email'
+    elif opcao == '4':
+        antigo_tel = input('Digite o antigo telefone: ')
+        novo_tel = input('Digite o novo telefone: ')
+        dados_ = novo_tel,antigo_tel
+
+    return dados_
 
 def deletar():
     pos = nome.index(input('Digite o nome que deseja apagar: '))
