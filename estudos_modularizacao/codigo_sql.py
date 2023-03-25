@@ -12,42 +12,67 @@ database = 'usuarios'
 )
 mycursor = mybd.cursor()
 
-print('___Cadastro__de__Cliente___')
+'''print('___Cadastro__de__Cliente___')
 while True:
     cadastrar()
+
+    sql = ('INSERT INTO pessoas (nome,cpf,email,telefone) VALUES(%s,%s,%s,%s)')
+
+    for usuario in range(len(nome)):
+        val = (nome[usuario],cpf[usuario],email[usuario],telefone[usuario])
+        mycursor.execute(sql,val)
+        mybd.commit()
+
     resposta = input('\nQuer cadastrar outro cliente (sim/nao)? ')
     if resposta == 'nao':
-        break
+        break'''
 
-'''resposta_atualizar = input('\nQuer atualizar seus dados (sim/nao)? ')
+
+
+resposta_atualizar = input('\nQuer atualizar seus dados (sim/nao)? ')
 if resposta_atualizar == 'sim':
+    mycursor.execute('SELECT * FROM pessoas')
+    myresult = mycursor.fetchall()
+
+    print('')
+    print('___Dados__Cadastrados___\n')
+    for result in myresult:
+        print(result)
     try:
-        print('___Atualização__de__Cadastro___')
-        novo_email = atualizar()
-        sql = f"UPDATE pessoas SET email = '{novo_email[0]}' WHERE email = '{novo_email[1]}'"
+        print('\n___Atualização__de__Cadastro___')
+        dados_ = atualizar()
+        sql = f"UPDATE pessoas SET {dados_[2]} = '{dados_[0]}' WHERE {dados_[2]} = '{dados_[1]}'"
         mycursor.execute(sql)
         mybd.commit()
         print(mycursor.rowcount," registro(s) afetado(s)!")
+        
+        mycursor.execute(f"SELECT * FROM pessoas WHERE {dados_[2]} = '{dados_[0]}'")
+        myresult = mycursor.fetchall()
+
+        print('')
+        print('___Registro(s)__Cadastrado(s)___\n')
+        for result in myresult:
+            print(result)
     except:
-        print('Cliente não encontrado!')'''   
+        print('Cliente não encontrado!')   
 
 #--------------------------------------------------------------------------------
-sql = ('INSERT INTO pessoas (nome,cpf,email,telefone) VALUES(%s,%s,%s,%s)')
+'''sql = ('INSERT INTO pessoas (nome,cpf,email,telefone) VALUES(%s,%s,%s,%s)')
 
 #variavel 'nome' escolhida aleatoriamente, como referencia
 for usuario in range(len(nome)):
     val = (nome[usuario],cpf[usuario],email[usuario],telefone[usuario])
     mycursor.execute(sql,val)
-    mybd.commit()
+    mybd.commit()'''
 
 #---------------------------------------------------------------------------------
-mycursor.execute('SELECT * FROM pessoas')
+'''mycursor.execute('SELECT * FROM pessoas')
 myresult = mycursor.fetchall()
 
 print('')
 print('___Dados__Cadastrados___\n')
 for result in myresult:
-    print(result)
+    print(result)'''
 
 mycursor.close()
 mybd.close()
