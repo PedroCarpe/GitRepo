@@ -25,12 +25,10 @@ def criar_nome():
     if boleana == True:
         #print('\u2705')
         nome.append(copia_nome)
-        return True
+        return nome
     else:
         print('\u001b[31m'+'Nome incorreto, digite novamente!'+'\u001b[37m')
-        criar_nome()    
-      
-
+        criar_nome()      
 
 def criar_cpf():
     global cpf
@@ -90,35 +88,34 @@ def criar_telefone():
  
 
 def cadastrar():
-    criar_nome()
+    nome1 = criar_nome()
     criar_cpf()
     criar_email()
-    criar_telefone()                
-        
-    
-'''def atualizar():
-    posicao = nome.index(input('Digite o nome que procura: '))
-    nome[posicao] = input('Digite o novo nome: ')
-'''    
-    
-'''def atualizar():
-    antigo_email = input('Digite o antigo email: ')
-    novo_email = input('Digite o novo email: ')
-    
-    return novo_email,antigo_email'''
+    criar_telefone()
+
+    return nome1                
+            
 
 def atualizar():
     print('Opções de atualização:\n1 - Nome;\n2 - CPF;\n3 - Email;\n4 - Telefone;\n')
     opcao = input('Digite a opção desejada: ')
     
-    if opcao == '3':
+    if opcao == '1':
+        antigo_nome = input('Digite o antigo nome: ')
+        novo_nome = input('Digite o novo nome: ')
+        dados_ = novo_nome,antigo_nome,'nome'
+    elif opcao == '2':
+        antigo_cpf = input('Digite o antigo CPF: ')
+        novo_cpf = input('Digite o novo CPF: ')
+        dados_ = novo_cpf,antigo_cpf,'cpf'
+    elif opcao == '3':
         antigo_email = input('Digite o antigo email: ')
         novo_email = input('Digite o novo email: ')
         dados_ = novo_email,antigo_email,'email'
     elif opcao == '4':
         antigo_tel = input('Digite o antigo telefone: ')
         novo_tel = input('Digite o novo telefone: ')
-        dados_ = novo_tel,antigo_tel
+        dados_ = novo_tel,antigo_tel,'telefone'
 
     return dados_
 
