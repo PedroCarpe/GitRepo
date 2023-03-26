@@ -1,6 +1,6 @@
 #A ideia do algoritmo, é simular o cadastro de um cliente/usuario
 import mysql.connector
-from codigo_python import cadastrar,atualizar,nome,cpf,email,telefone
+from codigo_python import cadastrar,atualizar,cpf,email,telefone
 
 
 #Conexao com o banco de dados
@@ -12,9 +12,9 @@ database = 'usuarios'
 )
 mycursor = mybd.cursor()
 
-'''print('___Cadastro__de__Cliente___')
+print('___Cadastro__de__Cliente___')
 while True:
-    cadastrar()
+    nome = cadastrar()
 
     sql = ('INSERT INTO pessoas (nome,cpf,email,telefone) VALUES(%s,%s,%s,%s)')
 
@@ -25,11 +25,11 @@ while True:
 
     resposta = input('\nQuer cadastrar outro cliente (sim/nao)? ')
     if resposta == 'nao':
-        break'''
+        break
 
 
 
-resposta_atualizar = input('\nQuer atualizar seus dados (sim/nao)? ')
+'''resposta_atualizar = input('\nQuer atualizar seus dados (sim/nao)? ')
 if resposta_atualizar == 'sim':
     mycursor.execute('SELECT * FROM pessoas')
     myresult = mycursor.fetchall()
@@ -54,7 +54,7 @@ if resposta_atualizar == 'sim':
         for result in myresult:
             print(result)
     except:
-        print('Cliente não encontrado!')   
+        print('Erro, operação não efetuada!')'''   
 
 #--------------------------------------------------------------------------------
 '''sql = ('INSERT INTO pessoas (nome,cpf,email,telefone) VALUES(%s,%s,%s,%s)')
